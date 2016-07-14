@@ -1,0 +1,98 @@
+<!--ctrl+shif+p => syntax:html-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+	<style>
+		body{
+			font-family: arial;
+		}
+		.wrapper{
+			width: 560px;
+			margin: auto;
+		}
+
+		.accordion{
+			padding: 10px;
+			cursor: pointer;
+		}
+
+		h4{
+			background-color: #ccc;
+			margin: 0;
+			padding: 10px;
+			color: #fff;
+		}
+
+		p{
+			background-color: #722445;
+			color: #fff;
+			margin: 0;
+			padding: 10px;
+		}
+
+		.bq{
+			display: none;
+		}
+	</style>
+<body>
+	<div class="wrapper">
+		<div class="contenido">
+			<div class="accordion">
+				<div class="tittle"><h4>Lorem-01</h4></div>
+				<div class="bq open">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, consectetur fugiat, ducimus illum reprehenderit odit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur laboriosam, obcaecati repellat mollitia, suscipit et alias sed ea rerum ad esse ullam consequatur cum excepturi molestias quaerat autem aliquam odio!</p>
+				</div>
+			</div>
+
+			<div class="accordion">
+				<div class="tittle"><h4>Lorem-02</h4></div>
+				<div class="bq">
+					<p>Quas voluptates laborum autem, magnam, dolorem reprehenderit facilis rem natus, tenetur deleniti possimus, molestiae vel. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit qui neque, quo recusandae aperiam veniam explicabo, consectetur ex delectus maiores molestiae doloribus facere nemo temporibus est dolor distinctio minus cupiditate.</p>
+				</div>
+			</div>
+
+			<div class="accordion">
+				<div class="tittle"><h4>Lorem-03</h4></div>
+				<div class="bq">
+					<p>Optio at laboriosam voluptatibus corporis porro distinctio temporibus harum ullam, consequuntur neque debitis adipisci voluptatum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro dolorum nemo totam hic vitae incidunt dolor, in odit temporibus itaque, quia ducimus ipsum doloribus et ratione, earum sunt sint repellat.</p>
+				</div>
+			</div>
+
+			<div class="accordion">
+				<div class="tittle"><h4>Lorem-04</h4></div>
+				<div class="bq">
+					<p>Distinctio laudantium, velit reiciendis quaerat. Sed magni tempora vero animi eveniet quod dignissimos at nulla. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati unde voluptates voluptatum! Libero adipisci est explicabo, molestias modi velit voluptatum sit nesciunt dolore ratione iste fugit, temporibus nihil, quia, obcaecati.</p>
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+	<script>
+		$('.bq').hide();
+		$('.open').show();
+
+		$('.tittle').on('click', function(){
+			if($(this).hasClass('activo')){
+				$(this).removeClass('activo');
+				$(this).next().slideUp();
+			}else{
+				$('.tittle').removeClass('activo');
+               	$(this).addClass('activo');
+				$('.bq').slideUp();
+				$(this).next().slideDown();
+			}
+		});
+
+		//TIENE CLASE --- hasClass('className')
+		//siguiente mismo nivel
+
+	</script>
+</body>
+</html>
